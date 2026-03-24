@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --font-poppins: var(--font-poppins);
+
+  --color-primary: #200f48;
+  --color-secondary: #391985;
+  --color-tertiary: #7e56dc;
+  --color-accent: #f2eefc;
+  --color-gray25: #262626;
+  --color-highlight: #cfeb6c;
+}
+
+@layer utilities {
+  .absolute-x-center {
+    @apply left-1/2 transform -translate-x-1/2;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+* {
+  cursor: none !important;
+}
+
+/* Restore cursor on actual touch/pointer-less devices only */
+@media (hover: none) {
+  * {
+    cursor: auto !important;
+  }
+}
+
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: fade 0.35s ease-in-out;
+}
+
+@keyframes fade {
+  from { opacity: 0.7; transform: scale(1); }
+  to   { opacity: 1;   transform: scale(1); }
+}
+
+:root {
+  --plyr-color-main: #7e56dc;
+}
+
+video.hide-fullscreen::-webkit-media-controls-fullscreen-button { display: none; }
+video.hide-fullscreen::-moz-media-controls-fullscreen-button    { display: none; }
+
+.gradientCircle1 {
+  background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+}
+
+.plyr.plyr--hidden-controls .plyr__controls { display: none !important; }
+
+/* TEXT LOADER */
+.card {
+  --bg-color: #111;
+  background-color: var(--bg-color);
+  padding: 1rem 2rem;
+  border-radius: 1.25rem;
+}
+.loader {
+  color: rgb(124,124,124);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  box-sizing: content-box;
+  height: 40px;
+  padding: 10px 10px;
+  display: flex;
+  border-radius: 8px;
+}
+.words { overflow: hidden; position: relative; }
+.words::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--bg-color) 10%, transparent 30%, transparent 70%, var(--bg-color) 90%);
+  z-index: 20;
+}
+.word {
+  display: block;
+  height: 100%;
+  padding-left: 6px;
+  color: #956afa;
+  animation: spin_4991 4s infinite;
+}
+@keyframes spin_4991 {
+  10%  { transform: translateY(-102%); }
+  25%  { transform: translateY(-100%); }
+  35%  { transform: translateY(-202%); }
+  50%  { transform: translateY(-200%); }
+  60%  { transform: translateY(-302%); }
+  75%  { transform: translateY(-300%); }
+  85%  { transform: translateY(-402%); }
+  100% { transform: translateY(-400%); }
+}
+
+/* =============================================
+   VISUAL ELECTRIC REDESIGN — NEW STYLES
+   ============================================= */
+
+/* Infinite marquee scroll animation */
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.marquee-track-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 28s linear infinite;
+}
+.marquee-track-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 32s linear infinite;
+}
+
+/* Hero collage thumbnail cards */
+.hero-thumb {
+  position: absolute;
+  width: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55);
+  background: #111;
+  transition: transform 0.3s ease;
+}
+.hero-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Hero card float animations (GPU compositor, zero scroll listeners) ── */
+@keyframes float-a {
+  0%, 100% { transform: translateZ(0) translateY(0px)   rotate(var(--r, 0deg)); }
+  50%       { transform: translateZ(0) translateY(-18px) rotate(var(--r, 0deg)); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translateZ(0) translateY(0px)   rotate(var(--r, 0deg)); }
+  50%       { transform: translateZ(0) translateY(14px)  rotate(var(--r, 0deg)); }
+}
+@keyframes float-c {
+  0%, 100% { transform: translateZ(0) translateY(0px)   rotate(var(--r, 0deg)); }
+  50%       { transform: translateZ(0) translateY(-10px) rotate(var(--r, 0deg)); }
+}
+@keyframes float-d {
+  0%, 100% { transform: translateZ(0) translateY(0px)   rotate(var(--r, 0deg)); }
+  50%       { transform: translateZ(0) translateY(20px)  rotate(var(--r, 0deg)); }
+}
+
+.hero-float-a { will-change: transform; animation: float-a 5s  ease-in-out infinite; }
+.hero-float-b { will-change: transform; animation: float-b 6.5s ease-in-out infinite; }
+.hero-float-c { will-change: transform; animation: float-c 4.2s ease-in-out infinite; }
+.hero-float-d { will-change: transform; animation: float-d 7s   ease-in-out infinite; }
+
+
+/* Sticky note testimonials */
+.sticky-card {
+  border-radius: 4px;
+  padding: 1.5rem;
+  box-shadow: 4px 6px 18px rgba(0,0,0,0.35);
+  position: relative;
+}
+.sticky-card::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 8px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 2px;
+}
+
+/* CTA section pulse button */
+@keyframes pulse-border {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(207,235,108,0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(207,235,108,0); }
+}
+.cta-btn-pulse {
+  animation: pulse-border 2.5s ease-in-out infinite;
+}
+
+/* Footer giant logotype */
+.footer-logotype {
+  font-size: clamp(3rem, 12vw, 11rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  white-space: nowrap;
+}

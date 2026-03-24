@@ -1,0 +1,29 @@
+{
+  "name": "ahmeddigital",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.13.0",
+    "hls.js": "^1.6.9",
+    "lucide-react": "^0.536.0",
+    "next": "15.4.5",
+    "ogl": "^1.0.11",
+    "plyr": "^3.7.8",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "swiper": "^11.2.10"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.5",
+    "tailwindcss": "^4"
+  }
+}

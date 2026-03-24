@@ -1,0 +1,83 @@
+# AHMED DIGITAL - BRAND GUIDELINES
+
+## 1. BRAND OVERVIEW & IDENTITY
+Ahmed Digital is a premium video editing agency dedicated to helping businesses and creators share their message through high-impact, scroll-stopping content. Our focus is on storytelling that resonates and results that go viral.
+
+**Brand Name:** Ahmed Digital
+**Brand Tagline:** "We create stories that you want to tell."
+**Core Mission:** To make video editing simple and stress-free for businesses by handling the creative side with care and consistency. We aim to help clients share their message clearly through clean, effective, and well-edited content.
+
+---
+
+## 2. BRAND STORY & PROMISE
+**The Story:** 
+We began with a passion for video editing long before it became a business. Over time, we discovered the immense power of a well-made video in helping people share their stories. Today, if there is a story to tell, we are ready to bring it to life.
+
+**Our Promise:**
+We promise to deliver honest and high-quality video editing every time. You can count on us to listen closely, meet deadlines, and ensure the final video truly represents your vision. We make the process stress-free so our clients can focus on their business.
+
+---
+
+## 3. TARGET AUDIENCE
+*   **Primary Market:** USA, Canada, and Australia (Global outreach).
+*   **Key Sectors:** Content Creators (YouTube/Reels), Real Estate Agencies, Marketing Firms, Corporate Businesses, and E-commerce Brands.
+*   **The Problem We Solve:** High-quality video production is overwhelming; we provide the professional "viral" edge without the headache.
+
+---
+
+## 4. BRAND VOICE & TONE
+The Ahmed Digital voice should feel:
+*   **Professional & Reliable:** Trust is paramount. We are the "reliable editing partner."
+*   **High-Energy & Creative:** We talk about "viral" growth and "scroll-stopping" content.
+*   **Direct & Clear:** We value clarity over complexity.
+*   **Supportive:** We are here to "listen closely" and "make things simple."
+
+---
+
+## 5. VISUAL IDENTITY
+
+### A. Color Palette
+Our palette is a blend of sophisticated deep purples balanced by high-contrast whites and a vibrant "viral" highlight.
+
+*   **Primary Dark:** #200f48 (Deep Space Purple) - Use for depth and authority.
+*   **Secondary:** #391985 (Royal Purple) - Use for UI elements and branding.
+*   **Tertiary/Vibrant:** #7e56dc (Electric Lavender) - Use for primary buttons, links, and major accents.
+*   **Highlight:** #cfeb6c (Viral Lime) - Use sparingly for high-attention calls-to-action or status indicators.
+*   **Backgrounds:** 
+    *   Dark: #0a0a0a (Deep Black)
+    *   Light: #ffffff (Pure White)
+*   **Foregrounds:** #ededed (Off-white) / #171717 (Dark Gray)
+
+### B. Typography
+*   **Primary Font:** **Poppins** (Sans-Serif)
+    *   Weights: 100 (Thin), 200 (Extra-Light), 500 (Medium), 600 (Semi-Bold), 700 (Bold).
+    *   Usage: All headings, body text, and interfaces.
+*   **Accent Style:** Serif Italic (e.g., for "Go Viral" callouts).
+    *   Usage: To emphasize key emotional words or specific brand slogans within headings.
+
+---
+
+## 6. CORE SERVICES & DELIVERABLES
+*   **Short-Form Content:** Viral Reels, TikToks, and Shorts.
+*   **Marketing & Ads:** High-conversion Video Sales Letters (VSLs) and social ads.
+*   **Professional Niche:** Real Estate showcase videos and Corporate event recaps.
+*   **Long-Form:** YouTube video editing and educational tutorials.
+
+---
+
+## 7. BRAND LOGO & SYMBOLS
+*   **Logo Composition:** Clean, modern logotype "AHMED DIGITAL" or uppercase "AHMED" with a distinctive digital flair.
+*   **Implementation:** Usually presented in a stark contrast (White on Black or Purple on White).
+*   **Favicon/Icon:** Simplified "A" or "AD" mark.
+
+---
+
+## 8. KEYWORDS FOR SEO & MARKETING
+Video Editing Agency, Reels Editing, Real Estate Video Editor, YouTube Video Editor, Marketing Videos, Viral Content, USA Video Editor, Professional Video Post-Production.
+
+---
+
+# HOW TO USE THESE GUIDELINES
+1.  **Consistency is Key:** Use the defined color palette across all socials (Instagram, X, LinkedIn).
+2.  **Highlight the Story:** Always frame work as "Storytelling" rather than just "Editing."
+3.  **Target the Outcome:** Focus marketing on the *result* (Engagement/Viral) rather than just the service.
