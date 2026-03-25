@@ -19,12 +19,18 @@ const THUMBS_DESKTOP = [
 ];
 
 const THUMBS_MOBILE = [
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',        float: 'hero-float-a', delay: '0s',    style: { top: '5%',    left: '3%',    height: '140px', width: '105px', '--r': '-6deg'  } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4',        float: 'hero-float-d', delay: '0.7s',  style: { top: '8%',    right: '4%',   height: '130px', width: '98px',  '--r': '5deg'   } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4',        float: 'hero-float-b', delay: '1.2s',  style: { top: '30%',   left: '1%',    height: '120px', width: '90px',  '--r': '8deg'   } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',        float: 'hero-float-c', delay: '0.4s',  style: { top: '32%',   right: '2%',   height: '125px', width: '95px',  '--r': '-4deg'  } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4',        float: 'hero-float-a', delay: '1.6s',  style: { bottom: '8%', left: '5%',    height: '135px', width: '100px', '--r': '3deg'   } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',        float: 'hero-float-d', delay: '0.9s',  style: { bottom: '10%',right: '3%',   height: '130px', width: '98px',  '--r': '-7deg'  } },
+  // Top-left
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',   float: 'hero-float-a', delay: '0s',   style: { top: '4%',    left: '2%',   height: '130px', width: '98px',  '--r': '-6deg' } },
+  // Top-right
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4', float: 'hero-float-d', delay: '0.7s', style: { top: '4%',    right: '2%',  height: '120px', width: '90px',  '--r': '5deg'  } },
+  // Mid-left (beside text, flush to edge)
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4', float: 'hero-float-b', delay: '1.2s', style: { top: '38%',   left: '0%',   height: '115px', width: '82px',  '--r': '4deg'  } },
+  // Mid-right (beside text, flush to edge)
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',   float: 'hero-float-c', delay: '0.4s', style: { top: '40%',   right: '0%',  height: '115px', width: '82px',  '--r': '-4deg' } },
+  // Bottom-left
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4', float: 'hero-float-a', delay: '1.6s', style: { bottom: '5%', left: '2%',   height: '125px', width: '93px',  '--r': '3deg'  } },
+  // Bottom-right
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',   float: 'hero-float-d', delay: '0.9s', style: { bottom: '5%', right: '2%',  height: '120px', width: '90px',  '--r': '-7deg' } },
 ];
 
 export default function HeroSection() {
