@@ -13,11 +13,12 @@ function NavBar() {
 
         const update = () => {
             const isScrolled = window.scrollY > 60;
+            const isMobile = window.innerWidth < 640;
 
             if (isScrolled) {
-                nav.style.width = '88%';
+                nav.style.width = isMobile ? '92%' : '88%';
                 nav.style.maxWidth = '1100px';
-                nav.style.padding = '0.6rem 1.5rem';
+                nav.style.padding = isMobile ? '0.5rem 1rem' : '0.6rem 1.5rem';
                 nav.style.borderRadius = '9999px';
                 nav.style.background = 'rgba(10,10,10,0.82)';
                 nav.style.backdropFilter = 'blur(20px)';
@@ -28,7 +29,7 @@ function NavBar() {
             } else {
                 nav.style.width = '100%';
                 nav.style.maxWidth = '100%';
-                nav.style.padding = '1rem 2rem';
+                nav.style.padding = isMobile ? '1rem' : '1rem 2rem';
                 nav.style.borderRadius = '0';
                 nav.style.background = 'transparent';
                 nav.style.backdropFilter = 'none';
@@ -48,8 +49,22 @@ function NavBar() {
             }
         };
 
+        const onResize = () => {
+            if (!ticking) {
+                requestAnimationFrame(update);
+                ticking = true;
+            }
+        };
+
         window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
+        window.addEventListener('resize', onResize, { passive: true });
+        // Initial setup
+        update();
+
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('resize', onResize);
+        };
     }, []);
 
     const links = [
@@ -81,12 +96,12 @@ function NavBar() {
             }}
         >
             {/* Logo */}
-            <span className="text-white font-poppins font-semibold text-sm tracking-wide select-none whitespace-nowrap shrink-0">
-                ahmeddigital<span style={{ color: '#cfeb6c' }}>.</span>
+            <span className="text-white font-poppins font-semibold text-sm sm:text-base tracking-wide select-none whitespace-nowrap shrink-0">
+                ahmed<span className="hidden sm:inline">digital</span><span style={{ color: '#cfeb6c' }}>.</span>
             </span>
 
             {/* Nav links */}
-            <ul className="flex items-center gap-4 sm:gap-7 text-white/70 text-xs sm:text-sm font-poppins font-light">
+            <ul className="flex items-center gap-3 sm:gap-7 text-white/70 text-[11px] sm:text-sm font-poppins font-light ml-auto sm:ml-0">
                 {links.map(({ label, action, href }) => (
                     <li key={label}>
                         {href ? (
@@ -110,7 +125,7 @@ function NavBar() {
                 href="https://cal.com/ahmeddigital/15min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black font-semibold text-xs sm:text-sm px-4 py-2 rounded-full hover:scale-105 whitespace-nowrap shrink-0 ml-3"
+                className="text-black font-semibold text-[11px] sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:scale-105 whitespace-nowrap shrink-0 ml-3 sm:ml-4"
                 style={{ background: '#cfeb6c', transition: 'transform 0.2s ease', display: 'inline-block' }}
             >
                 Let's Talk →

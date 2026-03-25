@@ -54,7 +54,7 @@ const TestimonialCarousel = () => {
   const swiperRef = useRef(null);
 
   return (
-    <section className="w-full py-20 md:py-28" style={{ background: "#f7f7f5" }}>
+    <section className="w-full py-20 md:py-28" style={{ background: "#0a0a0a" }}>
       {/* Heading */}
       <div className="text-center mb-14 px-4">
         <p
@@ -65,11 +65,11 @@ const TestimonialCarousel = () => {
         </p>
         <h2
           className="font-poppins font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl"
-          style={{ color: "#0a0a0a" }}
+          style={{ color: "#ffffff" }}
         >
           Trusted by Brands
           <br />
-          <span className="font-extralight italic" style={{ color: "#391985" }}>
+          <span className="font-extralight italic" style={{ color: "#cfeb6c" }}>
             That Demand the Best
           </span>
         </h2>
@@ -98,14 +98,14 @@ const TestimonialCarousel = () => {
                 <div
                   className="rounded-2xl p-8 md:p-10 flex flex-col justify-between transition-all duration-500"
                   style={{
-                    background: "#ffffff",
+                    background: "#111111",
                     boxShadow: isActive
-                      ? "0 20px 60px rgba(62,25,133,0.12), 0 4px 16px rgba(0,0,0,0.06)"
-                      : "0 4px 16px rgba(0,0,0,0.05)",
+                      ? "0 20px 60px rgba(126,86,220,0.1), 0 4px 16px rgba(0,0,0,0.6)"
+                      : "0 4px 16px rgba(0,0,0,0.4)",
                     minHeight: "280px",
-                    opacity: isActive ? 1 : 0.5,
+                    opacity: isActive ? 1 : 0.4,
                     transform: isActive ? "scale(1)" : "scale(0.96)",
-                    border: "1px solid rgba(0,0,0,0.06)",
+                    border: "1px solid rgba(255,255,255,0.06)",
                   }}
                 >
                   {/* Company */}
@@ -119,7 +119,7 @@ const TestimonialCarousel = () => {
                   {/* Quote */}
                   <p
                     className="font-poppins text-lg md:text-xl leading-relaxed flex-1 mb-8"
-                    style={{ color: "#171717", fontWeight: 400 }}
+                    style={{ color: "#f3f4f6", fontWeight: 300 }}
                   >
                     &ldquo;{t.quote}&rdquo;
                   </p>
@@ -127,19 +127,19 @@ const TestimonialCarousel = () => {
                   {/* Person */}
                   <div
                     className="flex items-center gap-4 pt-6"
-                    style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}
+                    style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
                   >
                     <img
                       src={t.avatar}
                       alt={t.name}
                       className="rounded-full object-cover flex-shrink-0"
-                      style={{ width: "48px", height: "48px", background: "#ede9fb" }}
+                      style={{ width: "48px", height: "48px", background: "#200f48" }}
                     />
                     <div>
-                      <p className="font-poppins font-semibold text-sm" style={{ color: "#0a0a0a" }}>
+                      <p className="font-poppins font-semibold text-sm" style={{ color: "#ffffff" }}>
                         {t.name}
                       </p>
-                      <p className="font-poppins text-xs" style={{ color: "#6b6b6b" }}>
+                      <p className="font-poppins text-xs" style={{ color: "#a1a1aa" }}>
                         {t.role}
                       </p>
                     </div>
@@ -160,8 +160,8 @@ const TestimonialCarousel = () => {
           style={{
             width: "40px",
             height: "40px",
-            background: current === 0 ? "rgba(0,0,0,0.06)" : "#0a0a0a",
-            color: current === 0 ? "#aaa" : "#fff",
+            background: current === 0 ? "rgba(255,255,255,0.04)" : "#200f48",
+            color: current === 0 ? "#555" : "#fff",
             cursor: current === 0 ? "not-allowed" : "pointer",
             border: "none",
           }}
@@ -172,7 +172,7 @@ const TestimonialCarousel = () => {
           </svg>
         </button>
 
-        <span className="font-poppins text-sm font-medium" style={{ color: "#6b6b6b" }}>
+        <span className="font-poppins text-sm font-medium" style={{ color: "#a1a1aa" }}>
           {current + 1} / {testimonials.length}
         </span>
 
@@ -183,8 +183,8 @@ const TestimonialCarousel = () => {
           style={{
             width: "40px",
             height: "40px",
-            background: current === testimonials.length - 1 ? "rgba(0,0,0,0.06)" : "#0a0a0a",
-            color: current === testimonials.length - 1 ? "#aaa" : "#fff",
+            background: current === testimonials.length - 1 ? "rgba(255,255,255,0.04)" : "#200f48",
+            color: current === testimonials.length - 1 ? "#555" : "#fff",
             cursor: current === testimonials.length - 1 ? "not-allowed" : "pointer",
             border: "none",
           }}
