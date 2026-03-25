@@ -8,29 +8,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 // float class + animation-delay assigned per card for organic randomness
 const THUMBS_DESKTOP = [
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',        float: 'hero-float-a', delay: '0s',    style: { top: '6%',    left: '3%',    height: '200px', width: '148px', '--r': '-4deg'  } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4',        float: 'hero-float-c', delay: '1.1s',  style: { top: '4%',    left: '20%',   height: '150px', width: '120px', '--r': '2deg'   } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',        float: 'hero-float-b', delay: '0.5s',  style: { top: '4%',    right: '18%',  height: '170px', width: '130px', '--r': '-2deg'  } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4',        float: 'hero-float-d', delay: '2s',    style: { top: '4%',    right: '2%',   height: '200px', width: '148px', '--r': '5deg'   } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',        float: 'hero-float-b', delay: '0.8s',  style: { top: '46%',   left: '1%',    height: '180px', width: '140px', '--r': '-6deg'  } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4',        float: 'hero-float-a', delay: '1.5s',  style: { top: '52%',   right: '1%',   height: '190px', width: '145px', '--r': '4deg'   } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',        float: 'hero-float-c', delay: '0.3s',  style: { bottom: '5%', left: '12%',   height: '160px', width: '128px', '--r': '3deg'   } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4',        float: 'hero-float-d', delay: '1.8s',  style: { bottom: '4%', right: '12%',  height: '160px', width: '128px', '--r': '-3deg'  } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002217/AD%20Videos/shorts/shortform-instagram-reels-fitness-tips_hgryrg.mp4',          float: 'hero-float-a', delay: '0s',   style: { top: '6%',    left: '3%',   height: '224px', width: '166px', '--r': '-4deg' } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002161/AD%20Videos/ads/real-estate-vide-sales-letter_kkxil2.mp4',                       float: 'hero-float-c', delay: '1.1s', style: { top: '4%',    left: '20%',  height: '172px', width: '138px', '--r': '2deg'  } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002204/AD%20Videos/youtube/youtube-travel-vlog-canada-highlights_tijxcy.mp4',           float: 'hero-float-b', delay: '0.5s', style: { top: '4%',    right: '18%', height: '192px', width: '148px', '--r': '-2deg' } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002207/AD%20Videos/socials/socialmedia-instagram-story-fall-fashion_v0rvae.mp4',        float: 'hero-float-d', delay: '2s',   style: { top: '4%',    right: '2%',  height: '224px', width: '166px', '--r': '5deg'  } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002257/AD%20Videos/events/event-marathon-run-2025-highlights_dsfzot.mp4',               float: 'hero-float-b', delay: '0.8s', style: { top: '46%',   left: '1%',   height: '202px', width: '158px', '--r': '-6deg' } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002212/AD%20Videos/ads/best-podcast-video-trailer_ptbqx6.mp4',                          float: 'hero-float-a', delay: '1.5s', style: { top: '52%',   right: '1%',  height: '214px', width: '163px', '--r': '4deg'  } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002167/AD%20Videos/motion/motiongraphics-animated-logo-intro_gnkw3v.mp4',               float: 'hero-float-c', delay: '0.3s', style: { bottom: '5%', left: '12%',  height: '182px', width: '146px', '--r': '3deg'  } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002155/AD%20Videos/ads/grocery-ugc-online-video-sales-letter_dshvav.mp4',               float: 'hero-float-d', delay: '1.8s', style: { bottom: '4%', right: '12%', height: '182px', width: '146px', '--r': '-3deg' } },
 ];
 
 const THUMBS_MOBILE = [
   // Top-left
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',   float: 'hero-float-a', delay: '0s',   style: { top: '4%',    left: '2%',   height: '130px', width: '98px',  '--r': '-6deg' } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002217/AD%20Videos/shorts/shortform-instagram-reels-fitness-tips_hgryrg.mp4',   float: 'hero-float-a', delay: '0s',   style: { top: '4%',    left: '2%',   height: '152px', width: '114px', '--r': '-6deg' } },
   // Top-right
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4', float: 'hero-float-d', delay: '0.7s', style: { top: '4%',    right: '2%',  height: '120px', width: '90px',  '--r': '5deg'  } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002207/AD%20Videos/socials/socialmedia-instagram-story-fall-fashion_v0rvae.mp4', float: 'hero-float-d', delay: '0.7s', style: { top: '4%',    right: '2%',  height: '140px', width: '105px', '--r': '5deg'  } },
   // Mid-left (beside text, flush to edge)
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4', float: 'hero-float-b', delay: '1.2s', style: { top: '38%',   left: '0%',   height: '115px', width: '82px',  '--r': '4deg'  } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002161/AD%20Videos/ads/real-estate-vide-sales-letter_kkxil2.mp4',               float: 'hero-float-b', delay: '1.2s', style: { top: '38%',   left: '0%',   height: '135px', width: '96px',  '--r': '4deg'  } },
   // Mid-right (beside text, flush to edge)
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',   float: 'hero-float-c', delay: '0.4s', style: { top: '40%',   right: '0%',  height: '115px', width: '82px',  '--r': '-4deg' } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002188/AD%20Videos/socials/funny-clip-editing-socialmedia-instagram-story_fau2x1.mp4', float: 'hero-float-c', delay: '0.4s', style: { top: '40%',   right: '0%',  height: '135px', width: '96px',  '--r': '-4deg' } },
   // Bottom-left
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4', float: 'hero-float-a', delay: '1.6s', style: { bottom: '5%', left: '2%',   height: '125px', width: '93px',  '--r': '3deg'  } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002204/AD%20Videos/youtube/youtube-travel-vlog-canada-highlights_tijxcy.mp4',    float: 'hero-float-a', delay: '1.6s', style: { bottom: '5%', left: '2%',   height: '146px', width: '108px', '--r': '3deg'  } },
   // Bottom-right
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4',   float: 'hero-float-d', delay: '0.9s', style: { bottom: '5%', right: '2%',  height: '120px', width: '90px',  '--r': '-7deg' } },
+  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002212/AD%20Videos/ads/best-podcast-video-trailer_ptbqx6.mp4',                   float: 'hero-float-d', delay: '0.9s', style: { bottom: '5%', right: '2%',  height: '140px', width: '105px', '--r': '-7deg' } },
 ];
 
 export default function HeroSection() {

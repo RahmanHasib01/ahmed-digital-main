@@ -11,16 +11,22 @@ const FeaturedWork = () => {
     const triggerRef = useRef()
 
     useEffect(() => {
+        // Set initial hidden state so elements don't flash on load
+        gsap.set(topTitleRef.current,    { x: '-80%', opacity: 0 });
+        gsap.set(bottomTitleRef.current, { x:  '80%', opacity: 0 });
+
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: triggerRef.current,
-                start: '40% bottom',
-                end: 'bottom bottom',
-                toggleActions: 'play none none none',
+                start: 'top 85%',
+                end: 'center 55%',
+                scrub: 0.6,           // ties animation directly to the scroll wheel
             },
         });
-        tl.fromTo(topTitleRef.current, { x: '-80%', opacity: 0 }, { x: '0', opacity: 1, ease: 'power3.out', duration: 0.9 }, 0)
-          .fromTo(bottomTitleRef.current, { x: '80%', opacity: 0 }, { x: '0', opacity: 1, ease: 'power3.out', duration: 0.9 }, 0);
+        tl.to(topTitleRef.current,    { x: '0%', opacity: 1, ease: 'power3.out', duration: 1 }, 0)
+          .to(bottomTitleRef.current, { x: '0%', opacity: 1, ease: 'power3.out', duration: 1 }, 0);
+
+        return () => ScrollTrigger.getAll().forEach(t => t.kill());
     }, []);
 
     return (
