@@ -33,10 +33,10 @@ const FeaturedWork = () => {
         <div
             id="work"
             ref={triggerRef}
-            className="relative w-full flex flex-col items-center justify-center overflow-hidden py-24"
+            className="relative w-full flex flex-col items-center justify-center overflow-hidden py-12"
             style={{
                 background: 'linear-gradient(135deg, #0a0a0a 0%, #200f48 50%, #0a0a0a 100%)',
-                minHeight: '35vh',
+                minHeight: '20vh',
             }}
         >
             {/* Grid overlay */}

@@ -13,7 +13,6 @@ export default function LoaderWrapper({ children }) {
             const tl = gsap.timeline({
                 defaults: { ease: "power3.out" },
                 onComplete: () => {
-                    // Wait until fade out finishes, then unmount
                     setTimeout(() => setLoading(false), 100);
                 },
             });
@@ -33,7 +32,7 @@ export default function LoaderWrapper({ children }) {
                 .to(barRef.current, { scaleX: 1, duration: 1 }, "-=0.6")
                 // Contract back (to right)
                 .to(barRef.current, { scaleX: 0, transformOrigin: "right center", duration: 1 })
-                // Expand again (to left) — extra loop for ~2s longer animation
+                // Expand again (to left)
                 .to(barRef.current, { scaleX: 1, transformOrigin: "left center", duration: 1 })
                 // Contract again
                 .to(barRef.current, { scaleX: 0, transformOrigin: "right center", duration: 1 })
@@ -46,10 +45,8 @@ export default function LoaderWrapper({ children }) {
 
     return (
         <div className="relative">
-            {/* Your actual page content */}
             {children}
 
-            {/* Loader overlays on top until animation ends */}
             {loading && (
                 <div
                     ref={loaderRef}

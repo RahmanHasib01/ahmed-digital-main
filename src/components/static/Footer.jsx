@@ -57,8 +57,12 @@ const Footer = () => {
                     {/* Contact */}
                     <div>
                         <p className="text-[#7e56dc] text-xs tracking-[0.2em] uppercase font-poppins mb-4">Get in touch</p>
-                        <a href="mailto:hello@ahmeddigital.com" className="text-white/60 text-sm font-poppins hover:text-white transition-colors break-all">
-                            hello@ahmeddigital.com
+                        <p className="text-white/80 text-sm font-poppins font-medium mb-2">Tanvir</p>
+                        <a href="mailto:mdtanvirahmed310@gmail.com" className="text-white/60 text-sm font-poppins hover:text-white transition-colors break-all block mb-2">
+                            mdtanvirahmed310@gmail.com
+                        </a>
+                        <a href="https://wa.me/8801318157393" target="_blank" rel="noopener noreferrer" className="text-white/60 text-sm font-poppins hover:text-white transition-colors">
+                            WhatsApp: +8801318157393
                         </a>
                     </div>
                 </div>

@@ -48,6 +48,11 @@ body {
   }
 }
 
+/* Restore cursor in fullscreen mode (e.g. video player) */
+:fullscreen *, :fullscreen {
+  cursor: auto !important;
+}
+
 
 ::view-transition-old(root),
 ::view-transition-new(root) {

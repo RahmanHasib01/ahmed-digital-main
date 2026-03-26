@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -57,9 +57,29 @@ export default function HeroSection() {
   const Card = ({ thumb, mobileOnly }) => {
     const { src, float, delay, style } = thumb;
     const { '--r': rotate, ...posStyle } = style;
+    const cardRef = useRef(null);
+    const videoRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+      const el = cardRef.current;
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { rootMargin: '200px' } // start loading 200px before visible
+      );
+      observer.observe(el);
+      return () => observer.disconnect();
+    }, []);
 
     return (
       <div
+        ref={cardRef}
         className={`absolute overflow-hidden rounded-xl ${float} ${mobileOnly ? 'lg:hidden' : 'hidden lg:block'}`}
         style={{
           ...posStyle,
@@ -70,11 +90,14 @@ export default function HeroSection() {
           animationDelay: delay,
         }}
       >
-        <video
-          src={src}
-          autoPlay muted loop playsInline preload="none"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-        />
+        {isVisible && (
+          <video
+            ref={videoRef}
+            src={src}
+            autoPlay muted loop playsInline preload="none"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          />
+        )}
       </div>
     );
   };

@@ -40,8 +40,8 @@ export default function NativePlyr({ src, onPlay, forwardRef, thumbnail, ariaLab
             const Plyr = module.default;
 
             playerRef.current = new Plyr(internalRef.current, {
-                fullscreen: { enabled: isMobile },
-                controls: ['play', 'progress', 'volume'], // desired controls
+                fullscreen: { enabled: true },
+                controls: ['play', 'progress', 'volume', 'fullscreen'],
             });
 
             // Wait until container exists

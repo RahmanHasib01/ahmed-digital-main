@@ -4,31 +4,29 @@ import { useState, useCallback } from 'react';
 import YoutubeVideos from './VideosComponent/YoutubeVideos';
 import AdsVideos from './VideosComponent/AdsVideos';
 import ShortVideos from './VideosComponent/ShortsVideos';
-import MotionVideos from './VideosComponent/MotionVideos';
 import SocialMediaVideos from './VideosComponent/SocialMediaVideos';
 import EventsVideos from './VideosComponent/EventVideos';
-import EduVideos from './VideosComponent/EduVideos';
+import OtherVideos from './VideosComponent/OtherVideos';
 
 const categories = [
-    "youtube", "ads & vsl", "shorts", "motions", "social media", "events", "edu contents",
+    "ads & vsl", "youtube", "shorts", "social media", "events", "other",
 ];
 
 // JSX elements defined once at module level — never re-created
 const PANELS = {
-    'youtube':      <YoutubeVideos />,
     'ads & vsl':    <AdsVideos />,
+    'youtube':      <YoutubeVideos />,
     'shorts':       <ShortVideos />,
-    'motions':      <MotionVideos />,
     'social media': <SocialMediaVideos />,
     'events':       <EventsVideos />,
-    'edu contents': <EduVideos />,
+    'other':        <OtherVideos />,
 };
 
 const WorkShowcase = () => {
-    const [selectedCategory, setSelectedCategory] = useState('youtube');
+    const [selectedCategory, setSelectedCategory] = useState('ads & vsl');
 
     // Track which tabs have ever been visited — once visited, they stay mounted forever
-    const [mountedTabs, setMountedTabs] = useState(() => new Set(['youtube']));
+    const [mountedTabs, setMountedTabs] = useState(() => new Set(['ads & vsl']));
 
     const selectedIndex = categories.indexOf(selectedCategory);
 

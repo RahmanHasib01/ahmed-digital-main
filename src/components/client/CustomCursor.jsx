@@ -59,10 +59,21 @@ const CustomCursor = () => {
             el.addEventListener('mouseleave', onMouseLeave);
         });
 
+        // Hide cursor in fullscreen mode
+        const handleFullscreen = () => {
+            if (document.fullscreenElement) {
+                cursor.style.display = 'none';
+            } else {
+                cursor.style.display = '';
+            }
+        };
+        document.addEventListener('fullscreenchange', handleFullscreen);
+
         // 🧹 Cleanup
         return () => {
             window.removeEventListener('mousemove', moveCursor);
             window.removeEventListener('click', onClick);
+            document.removeEventListener('fullscreenchange', handleFullscreen);
             hoverTargets.forEach((el) => {
                 el.removeEventListener('mouseenter', onMouseEnter);
                 el.removeEventListener('mouseleave', onMouseLeave);
