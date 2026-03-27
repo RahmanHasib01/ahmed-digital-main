@@ -1,158 +1,174 @@
 'use client'
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ArrowUpRight, Hand, Target, Building2, PlaySquare } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// float class + animation-delay assigned per card for organic randomness
-const THUMBS_DESKTOP = [
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002217/AD%20Videos/shorts/shortform-instagram-reels-fitness-tips_hgryrg.mp4',          float: 'hero-float-a', delay: '0s',   style: { top: '6%',    left: '3%',   height: '224px', width: '166px', '--r': '-4deg' } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002161/AD%20Videos/ads/real-estate-vide-sales-letter_kkxil2.mp4',                       float: 'hero-float-c', delay: '1.1s', style: { top: '4%',    left: '20%',  height: '172px', width: '138px', '--r': '2deg'  } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002204/AD%20Videos/youtube/youtube-travel-vlog-canada-highlights_tijxcy.mp4',           float: 'hero-float-b', delay: '0.5s', style: { top: '4%',    right: '18%', height: '192px', width: '148px', '--r': '-2deg' } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002207/AD%20Videos/socials/socialmedia-instagram-story-fall-fashion_v0rvae.mp4',        float: 'hero-float-d', delay: '2s',   style: { top: '4%',    right: '2%',  height: '224px', width: '166px', '--r': '5deg'  } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002257/AD%20Videos/events/event-marathon-run-2025-highlights_dsfzot.mp4',               float: 'hero-float-b', delay: '0.8s', style: { top: '46%',   left: '1%',   height: '202px', width: '158px', '--r': '-6deg' } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002212/AD%20Videos/ads/best-podcast-video-trailer_ptbqx6.mp4',                          float: 'hero-float-a', delay: '1.5s', style: { top: '52%',   right: '1%',  height: '214px', width: '163px', '--r': '4deg'  } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002167/AD%20Videos/motion/motiongraphics-animated-logo-intro_gnkw3v.mp4',               float: 'hero-float-c', delay: '0.3s', style: { bottom: '5%', left: '12%',  height: '182px', width: '146px', '--r': '3deg'  } },
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002155/AD%20Videos/ads/grocery-ugc-online-video-sales-letter_dshvav.mp4',               float: 'hero-float-d', delay: '1.8s', style: { bottom: '4%', right: '12%', height: '182px', width: '146px', '--r': '-3deg' } },
-];
-
-const THUMBS_MOBILE = [
-  // Top-left
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002217/AD%20Videos/shorts/shortform-instagram-reels-fitness-tips_hgryrg.mp4',   float: 'hero-float-a', delay: '0s',   style: { top: '4%',    left: '2%',   height: '152px', width: '114px', '--r': '-6deg' } },
-  // Top-right
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002207/AD%20Videos/socials/socialmedia-instagram-story-fall-fashion_v0rvae.mp4', float: 'hero-float-d', delay: '0.7s', style: { top: '4%',    right: '2%',  height: '140px', width: '105px', '--r': '5deg'  } },
-  // Mid-left (beside text, flush to edge)
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002161/AD%20Videos/ads/real-estate-vide-sales-letter_kkxil2.mp4',               float: 'hero-float-b', delay: '1.2s', style: { top: '38%',   left: '0%',   height: '135px', width: '96px',  '--r': '4deg'  } },
-  // Mid-right (beside text, flush to edge)
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002188/AD%20Videos/socials/funny-clip-editing-socialmedia-instagram-story_fau2x1.mp4', float: 'hero-float-c', delay: '0.4s', style: { top: '40%',   right: '0%',  height: '135px', width: '96px',  '--r': '-4deg' } },
-  // Bottom-left
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002204/AD%20Videos/youtube/youtube-travel-vlog-canada-highlights_tijxcy.mp4',    float: 'hero-float-a', delay: '1.6s', style: { bottom: '5%', left: '2%',   height: '146px', width: '108px', '--r': '3deg'  } },
-  // Bottom-right
-  { src: 'https://res.cloudinary.com/dyoeyaaej/video/upload/v1755002212/AD%20Videos/ads/best-podcast-video-trailer_ptbqx6.mp4',                   float: 'hero-float-d', delay: '0.9s', style: { bottom: '5%', right: '2%',  height: '140px', width: '105px', '--r': '-7deg' } },
-];
-
 export default function HeroSection() {
-  const headlineRef = useRef();
-  const brandRef    = useRef();
-  const sectionRef  = useRef();
+  const sectionRef = useRef();
+  const videoWrapperRef = useRef();
+  const videoPerspectiveRef = useRef();
+  const bottomContentRef = useRef();
 
   useEffect(() => {
-    // Headline → brand name crossfade on scroll (lightweight, opacity only)
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: '20% top',
-        end: '40% top',
-        scrub: true,
-      },
-    });
-    tl.fromTo(headlineRef.current, { opacity: 1 }, { opacity: 0, duration: 0.5 })
-      .fromTo(brandRef.current,    { opacity: 0 }, { opacity: 1, duration: 0.8 }, '>-0.2');
+    // 3D Video Scroll effect
+    const ctx = gsap.context(() => {
+      // Set initial 3D transform for the video container
+      gsap.set(videoPerspectiveRef.current, {
+        rotationX: 35,
+        rotationZ: -5,
+        scale: 0.85,
+        transformPerspective: 1000,
+        boxShadow: "0 20px 40px rgba(91, 69, 254, 0.4)" // Purple glow
+      });
 
-    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+      // Animate to flat 2D as user scrolls
+      gsap.to(videoPerspectiveRef.current, {
+        rotationX: 0,
+        rotationZ: 0,
+        scale: 1,
+        boxShadow: "0 0px 0px rgba(91, 69, 254, 0)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: videoWrapperRef.current,
+          start: "top 70%",
+          end: "top 10%",
+          scrub: 1,
+        }
+      });
+
+      // Fade in bottom content
+      gsap.fromTo(bottomContentRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1, y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: bottomContentRef.current,
+            start: "top 80%",
+          }
+        }
+      );
+
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
-  const Card = ({ thumb, mobileOnly }) => {
-    const { src, float, delay, style } = thumb;
-    const { '--r': rotate, ...posStyle } = style;
-    const cardRef = useRef(null);
-    const videoRef = useRef(null);
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-      const el = cardRef.current;
-      if (!el) return;
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.disconnect();
-          }
-        },
-        { rootMargin: '200px' } // start loading 200px before visible
-      );
-      observer.observe(el);
-      return () => observer.disconnect();
-    }, []);
-
-    return (
-      <div
-        ref={cardRef}
-        className={`absolute overflow-hidden rounded-xl ${float} ${mobileOnly ? 'lg:hidden' : 'hidden lg:block'}`}
-        style={{
-          ...posStyle,
-          '--r': rotate,
-          border: '1.5px solid rgba(255,255,255,0.18)',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.6)',
-          background: '#111',
-          animationDelay: delay,
-        }}
-      >
-        {isVisible && (
-          <video
-            ref={videoRef}
-            src={src}
-            autoPlay muted loop playsInline preload="none"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-          />
-        )}
-      </div>
-    );
-  };
-
   return (
-    <section
-      id="home"
-      ref={sectionRef}
-      className="relative w-full h-screen bg-black overflow-hidden flex items-center justify-center"
-    >
-      {/* Radial glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(126,86,220,0.18) 0%, transparent 70%)' }}
+    <section ref={sectionRef} className="relative w-full bg-[#050505] overflow-hidden pt-32 pb-20 font-poppins text-white">
+      {/* Background radial glow */}
+      <div 
+        className="absolute inset-x-0 top-0 h-[800px] pointer-events-none" 
+        style={{ background: 'radial-gradient(circle at 50% 20%, rgba(91,69,254,0.15) 0%, transparent 60%)' }} 
       />
 
-      {/* Desktop floating cards */}
-      {THUMBS_DESKTOP.map((thumb, i) => (
-        <Card key={`d${i}`} thumb={thumb} mobileOnly={false} />
-      ))}
+      {/* Top Header Section */}
+      <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 text-center mt-10">
+        <h1 className="leading-tight mb-4 tracking-tight" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}>
+          <span className="text-[#888] font-medium block mb-2">Get More Leads</span>
+          <span className="font-bold">Using Quality Video Content</span>
+        </h1>
 
-      {/* Mobile floating cards */}
-      {THUMBS_MOBILE.map((thumb, i) => (
-        <Card key={`m${i}`} thumb={thumb} mobileOnly={true} />
-      ))}
+        <p className="text-[#a0a0a0] max-w-2xl text-base sm:text-lg font-light mb-8">
+          We help entrepreneurs and businesses with Done-For-You organic content systems that generate leads on autopilot.
+        </p>
 
-      {/* Centre headline */}
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl">
-        <div ref={headlineRef}>
-          <h1
-            className="text-white font-poppins leading-tight mb-4"
-            style={{ fontSize: 'clamp(1.75rem, 5.5vw, 5.5rem)', fontWeight: 700, letterSpacing: '-0.02em' }}
-          >
-            We Create Stories<br />
-            <span className="italic font-extralight" style={{ color: '#cfeb6c' }}>That Go Viral.</span>
-          </h1>
-          <p className="text-white/45 text-sm lg:text-lg font-light mb-8 tracking-wide">
-            Scroll-stopping content for brands that mean business.
-          </p>
-          <a
-            href="https://cal.com/ahmeddigital/15min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-black transition-all duration-300 hover:scale-105 text-sm lg:text-base"
-            style={{ background: '#cfeb6c' }}
-          >
-            Book a Call →
-          </a>
+        {/* Avatars */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 mb-10">
+          <div className="flex -space-x-3">
+            <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Sarah" alt="Client 1" className="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#200f48] object-cover" />
+            <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Marcus" alt="Client 2" className="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#200f48] object-cover" />
+            <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Priya" alt="Client 3" className="w-10 h-10 rounded-full border-[#050505] bg-[#200f48] object-cover" />
+            <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Jake" alt="Client 4" className="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#200f48] object-cover" />
+          </div>
+          <div className="text-left text-sm max-w-[200px] sm:max-w-none text-center sm:text-left">
+            <p className="font-semibold text-white/90">Loved by 500+ Businesses worldwide.</p>
+            <p className="text-[#888]">Our Clients Speak for Us</p>
+          </div>
         </div>
 
-        {/* Brand name fades in as headline fades out */}
-        <div ref={brandRef} className="absolute inset-0 flex items-center justify-center opacity-0 pointer-events-none select-none">
-          <h2 className="font-poppins font-bold text-white" style={{ fontSize: 'clamp(1.2rem, 6vw, 6rem)', letterSpacing: '-0.03em' }}>
-            AHMED<span className="font-extralight"> DIGITAL</span>
-          </h2>
+        {/* CTA Button */}
+        <a 
+          href="https://cal.com/ahmeddigital/15min" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105"
+          style={{ background: '#4b4ac8', boxShadow: '0 4px 14px 0 rgba(75,74,200,0.39)' }}
+        >
+          Book A Call <ArrowUpRight size={18} />
+        </a>
+      </div>
+
+      {/* 3D Scrolling Video Wrapper */}
+      <div ref={videoWrapperRef} className="relative z-20 mt-16 sm:mt-24 max-w-4xl mx-auto px-4 perspective-container" style={{ perspective: '1200px' }}>
+        <div 
+          ref={videoPerspectiveRef} 
+          className="w-full aspect-video rounded-2xl overflow-hidden relative" 
+          style={{ background: '#111' }}
+        >
+          <div className="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none z-10"></div>
+          {/* Main Hero Video */}
+          <video
+            src="https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4"
+            autoPlay muted loop playsInline preload="auto"
+            className="w-full h-full object-cover rounded-2xl"
+          />
+        </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div ref={bottomContentRef} className="relative z-10 mt-24 sm:mt-40 px-4 sm:px-6 text-center max-w-6xl mx-auto flex flex-col items-center">
+        
+        <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 z-10 relative leading-tight">
+          Tired of video content that simply exists?<br className="hidden sm:block"/>
+          Let's craft <span className="italic font-light">scroll-stopping</span> stories that <span className="relative inline-block">get results.<svg className="absolute w-[110%] h-3 -bottom-2 -left-[5%] text-[#cfeb6c]" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M2 6.5C48 2.5 137 -1.5 198.5 6.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg></span>
+        </h2>
+
+        {/* Features / Services Boxes */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full max-w-5xl z-10 relative mb-16">
+          <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-[#4b4ac8] bg-[#0a0a0a] transition hover:shadow-[0_0_20px_rgba(75,74,200,0.3)]">
+            <Hand size={32} className="text-white mb-4" />
+            <h4 className="text-white font-bold text-lg mb-1">Short-Form Content</h4>
+            <p className="text-[#888] text-sm">Viral Reels, TikToks,<br/>Shorts.</p>
+          </div>
+          <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-[#4b4ac8] bg-[#0a0a0a] transition hover:shadow-[0_0_20px_rgba(75,74,200,0.3)]">
+            <Target size={32} className="text-white mb-4" />
+            <h4 className="text-white font-bold text-lg mb-1">Marketing & Ads</h4>
+            <p className="text-[#888] text-sm">High-conversion VSLs &<br/>Social Ads.</p>
+          </div>
+          <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-[#4b4ac8] bg-[#0a0a0a] transition hover:shadow-[0_0_20px_rgba(75,74,200,0.3)]">
+            <Building2 size={32} className="text-white mb-4" />
+            <h4 className="text-white font-bold text-lg mb-1">Professional Niche</h4>
+            <p className="text-[#888] text-sm">Real Estate & Corporate<br/>Videos.</p>
+          </div>
+          <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-[#4b4ac8] bg-[#0a0a0a] transition hover:shadow-[0_0_20px_rgba(75,74,200,0.3)]">
+            <PlaySquare size={32} className="text-white mb-4" />
+            <h4 className="text-white font-bold text-lg mb-1">Long-Form Content</h4>
+            <p className="text-[#888] text-sm">YouTube Videos &<br/>Tutorials.</p>
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 pt-8 w-full max-w-3xl z-10 relative">
+          <div className="flex flex-col items-center">
+            <h3 className="text-[#7e56dc] text-4xl sm:text-5xl font-bold mb-1">200<span className="text-2xl">%</span></h3>
+            <p className="text-white text-xs font-semibold uppercase tracking-wider mb-1">More Engagement</p>
+            <p className="text-[#888] text-xs">Viral-Edge Edits</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <h3 className="text-[#7e56dc] text-4xl sm:text-5xl font-bold mb-1">5<span className="text-2xl min-w-4 text-center">x</span></h3>
+            <p className="text-white text-xs font-semibold uppercase tracking-wider mb-1">More Reach</p>
+            <p className="text-[#888] text-xs">Targeted Distribution</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <h3 className="text-[#7e56dc] text-4xl sm:text-5xl font-bold mb-1">50<span className="text-2xl">%</span></h3>
+            <p className="text-white text-xs font-semibold uppercase tracking-wider mb-1">More Leads</p>
+            <p className="text-[#888] text-xs">Automated Growth Systems</p>
+          </div>
         </div>
       </div>
     </section>

@@ -2,11 +2,11 @@
 import React from 'react'
 
 const stats = [
-    { number: '5',   label: 'Regions',  sub: 'all over the world',       bg: '#cfeb6c', text: '#000' },
-    { number: '50+', label: 'Brands',   sub: 'served and growing',        bg: '#1a1a1a', text: '#fff' },
-    { number: '100+',label: 'Clients',  sub: 'we call family',            bg: '#fff',    text: '#000' },
-    { number: '500+',label: 'Projects', sub: 'completed over the years',  bg: '#391985', text: '#fff' },
-    { number: '5x',  label: 'Growth',   sub: 'engagement boost avg.',     bg: '#1a1a1a', text: '#fff' },
+    { number: '5', label: 'Regions', sub: 'all over the world', bg: '#cfeb6c', text: '#000' },
+    { number: '50+', label: 'Brands', sub: 'served and growing', bg: '#1a1a1a', text: '#fff' },
+    { number: '100+', label: 'Clients', sub: 'we call family', bg: '#fff', text: '#000' },
+    { number: '500+', label: 'Projects', sub: 'completed over the years', bg: '#391985', text: '#fff' },
+    { number: '5x', label: 'Growth', sub: 'engagement boost avg.', bg: '#1a1a1a', text: '#fff' },
 ];
 
 const Experience = () => {

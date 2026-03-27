@@ -50,7 +50,6 @@ export default function Home() {
 
       <main>
         <HeroSection />
-        <ClientLogoStrip />
         <About />
         <FeaturedWork />
         <WorkShowcase />

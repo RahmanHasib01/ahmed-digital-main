@@ -61,16 +61,17 @@ const TestimonialCarousel = () => {
           className="uppercase tracking-widest text-xs font-semibold mb-3"
           style={{ color: "#7e56dc", letterSpacing: "0.2em" }}
         >
-          Testimonials
+          Client Testimonials
         </p>
         <h2
           className="font-poppins font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl"
           style={{ color: "#ffffff" }}
         >
-          Trusted by Brands
+          Hear what they’re
+
           <br />
           <span className="font-extralight italic" style={{ color: "#cfeb6c" }}>
-            That Demand the Best
+            Saying about us
           </span>
         </h2>
       </div>
@@ -84,9 +85,9 @@ const TestimonialCarousel = () => {
           slidesPerView={1.12}
           spaceBetween={20}
           breakpoints={{
-            640:  { slidesPerView: 1.2,  spaceBetween: 24 },
+            640: { slidesPerView: 1.2, spaceBetween: 24 },
             1024: { slidesPerView: 1.35, spaceBetween: 32 },
-            1280: { slidesPerView: 1.5,  spaceBetween: 40 },
+            1280: { slidesPerView: 1.5, spaceBetween: 40 },
           }}
           onSwiper={(swiper) => { swiperRef.current = swiper; }}
           onSlideChange={(swiper) => setCurrent(swiper.activeIndex)}
