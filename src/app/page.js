@@ -1,6 +1,3 @@
-import Head from 'next/head';
-import Script from 'next/script';
-
 import HeroSection from "@/components/client/HeroSection";
 import ClientLogoStrip from "@/components/static/ClientLogoStrip";
 import FeaturedWork from "@/components/client/FeaturedWork";
@@ -11,39 +8,65 @@ import About from '@/components/client/About';
 import WorkShowcase from "@/components/client/WorkShowcase";
 import CTASection from "@/components/static/CTASection";
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Ahmed Digital",
-  "url": "https://ahmeddigital.com",
-  "logo": "https://ahmeddigital.com/photos/AHMED.png",
-  "description": "Ahmed Digital is a video editing agency offering services for reels, YouTube, ads, promos, real estate, and tutorial videos.",
-  "sameAs": [
-    "https://www.facebook.com/share/1FBCAjnTue/",
-    "https://www.linkedin.com/company/ahmeddigital247/posts/?feedView=all",
-    "https://www.instagram.com/ahmed.digital247",
-  ]
-};
+// Schema.org Structured Data
+const schemaData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ahmed Digital",
+    "url": "https://ahmeddigital.com",
+    "logo": "https://ahmeddigital.com/photos/AHMED.png",
+    "description": "Ahmed Digital is a video editing agency offering services for reels, YouTube, ads, promos, real estate, and tutorial videos.",
+    "sameAs": [
+      "https://www.facebook.com/share/1FBCAjnTue/",
+      "https://www.linkedin.com/company/ahmeddigital247/posts/?feedView=all",
+      "https://www.instagram.com/ahmed.digital247",
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Professional Video Editing Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Ahmed Digital"
+    },
+    "description": "High-quality video editing for TikTok reels, YouTube, corporate ads, and tutorials.",
+    "areaServed": ["US", "CA", "GB", "AU"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Video Editing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Short-Form Content (Reels, TikToks)"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Marketing & Ad Videos"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Long-Form YouTube Content"
+          }
+        }
+      ]
+    }
+  }
+];
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Ahmed Digital | Trusted Video Editing Services for USA & Canada</title>
-        <meta name="description" content="Expert video editing for YouTube, ads, reels, real estate, promos, and corporate videos. Trusted by American businesses for viral marketing videos." />
-        <meta name="keywords" content="video editing USA, reels editor, promo video editing, real estate video editor" />
-        <link rel="canonical" href="https://ahmeddigital.com" />
-        <meta property="og:title" content="Ahmed Digital | Trusted Video Editing Services" />
-        <meta property="og:description" content="We create stories that you want to tell." />
-        <meta property="og:url" content="https://ahmeddigital.com" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ahmed Digital | Trusted Video Editing Services" />
-        <meta name="twitter:description" content="We create stories that you want to tell." />
-      </Head>
-
-      <Script
-        id="ld-json"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />

@@ -14,29 +14,47 @@ const poppins = Poppins({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://ahmeddigital.com'),
   title: 'Ahmed Digital | Video Editing Agency for Reels, Ads & Real Estate Videos',
   description:
     'Professional video editing for reels, YouTube, ads, VSLs, real estate, and corporate videos. Serving USA clients with viral marketing videos.',
-  keywords: 'video editing agency, reels editing, real estate video editor, YouTube video editor, marketing videos, USA video editor',
+  keywords: 'video editing agency, reels editing, real estate video editor, YouTube video editor, marketing videos, USA video editor, video production',
   openGraph: {
-    title: 'Ahmed Digital | Video Editing Agency',
-    description: 'We create stories that you want to tell.',
+    title: 'Ahmed Digital | Video Editing Agency for Reels & Ads',
+    description: 'We create scroll-stopping stories that convert. Professional video editing for businesses and creators.',
     url: 'https://ahmeddigital.com',
     siteName: 'Ahmed Digital',
     images: [
       {
-        url: 'https://ahmeddigital.com/photos/AHMED.png',
+        url: '/photos/AHMED.png',
         width: 1200,
         height: 630,
+        alt: 'Ahmed Digital Video Editing Agency',
       },
     ],
     locale: 'en_US',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ahmed Digital | Professional Video Editing Agency',
+    description: 'Transform your content with viral-edge video editing. Specializing in Reels, Ads, and YouTube.',
+    images: ['/photos/AHMED.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: "https://ahmeddigital.com",
   },
-
 };
 
 

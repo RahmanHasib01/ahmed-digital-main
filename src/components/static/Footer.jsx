@@ -70,7 +70,7 @@ const Footer = () => {
 
             {/* Giant logotype */}
             <div className="overflow-hidden px-4 sm:px-8" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-                <h1
+                <div
                     className="text-white/10 select-none text-center hover:text-white/15 transition-colors duration-500 font-poppins font-extrabold"
                     style={{
                         fontSize: 'clamp(2rem, 10vw, 10rem)',
@@ -83,7 +83,7 @@ const Footer = () => {
                     }}
                 >
                     AHMED DIGITAL
-                </h1>
+                </div>
             </div>
 
             {/* Sub-footer */}

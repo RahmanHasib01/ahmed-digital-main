@@ -49,7 +49,7 @@ const FeaturedWork = () => {
             />
 
             <div className="relative z-10 text-center leading-none">
-                <h1
+                <div
                     ref={topTitleRef}
                     className="font-poppins font-extrabold text-transparent"
                     style={{
@@ -59,8 +59,8 @@ const FeaturedWork = () => {
                     }}
                 >
                     FEATURED
-                </h1>
-                <h1
+                </div>
+                <div
                     ref={bottomTitleRef}
                     className="font-poppins font-extralight text-white"
                     style={{
@@ -69,7 +69,7 @@ const FeaturedWork = () => {
                     }}
                 >
                     WORK
-                </h1>
+                </div>
             </div>
         </div>
     )
