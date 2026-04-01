@@ -34,9 +34,9 @@ export default function HeroSection() {
         ease: "none",
         scrollTrigger: {
           trigger: videoWrapperRef.current,
-          start: "top 70%",
-          end: "top 10%",
-          scrub: 1,
+          start: "top 80%",
+          end: "top 40%",
+          scrub: 0.5,
         }
       });
 

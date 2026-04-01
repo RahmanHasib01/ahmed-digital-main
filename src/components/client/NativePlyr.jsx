@@ -69,6 +69,11 @@ export default function NativePlyr({ src, onPlay, forwardRef, thumbnail, ariaLab
                 className="w-full h-auto rounded-lg"
                 playsInline
                 onPlay={(e) => {
+                    document.querySelectorAll('video').forEach((vid) => {
+                        if (vid !== e.target && !vid.autoplay) {
+                            vid.pause();
+                        }
+                    });
                     if (onPlay) onPlay(e);
                     setShowPlayButton(false); // ✅ Hide play button whenever video starts playing
                 }}
