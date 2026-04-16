@@ -9,8 +9,8 @@ const OurStory = () => {
     const paragraphRef = useRef(null);
 
     // Your paragraph text split into words
-    const paragraphText = `We began with a passion for video editing before it became a business. Over time, we learned how powerful a well-made video can be to help others share their stories.
-    if there is a story to tell, we are ready to bring it to life.`;
+    const paragraphText = `I began with a passion for video editing before it became a business. Over time, I learned how powerful a well-made video can be to help others share their stories.
+    if there is a story to tell, I am ready to bring it to life.`;
 
     // Split the paragraph into words and return array of spans
     const words = paragraphText.split(' ').map((word, i) => (
@@ -49,9 +49,9 @@ const OurStory = () => {
         <div className='h-[77dvh] w-full flex'>
             <div className="left-section w-[40%]">
                 <div className="text mt-[5dvh] lg:mt-[10dvh]">
-                    <h1 className='text-[6dvw] lg:text-[3dvw]'>Our Story</h1>
+                    <h1 className='text-[6dvw] lg:text-[3dvw]'>My Story</h1>
                     <button className='text-[2dvw] lg:text-[1.2dvw] lg:mt-[5dvh] border border-tertiary rounded-3xl px-[1dvw]'>
-                        More About Us
+                        More About Me
                     </button>
                 </div>
             </div>

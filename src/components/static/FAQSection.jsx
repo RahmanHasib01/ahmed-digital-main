@@ -5,23 +5,23 @@ import { Plus, Minus } from 'lucide-react'
 const faqs = [
   {
     question: "What is Ahmed Digital?",
-    answer: "Ahmed Digital is a premium video editing agency specializing in high-impact, scroll-stopping content. Our team provides 'Done-For-You' organic content systems designed to help businesses and creators grow their influence and generate leads on autopilot through expert storytelling and viral-ready production."
+    answer: "Ahmed Digital is a premium video editing service specializing in high-impact, scroll-stopping content. I provide 'Done-For-You' organic content systems designed to help businesses and creators grow their influence and generate leads on autopilot through expert storytelling and viral-ready production."
   },
   {
     question: "What types of video editing services do you offer?",
-    answer: "We offer a comprehensive range of video post-production services including viral reels for Instagram and TikTok, YouTube long-form editing, real estate showcase videos, corporate event recaps, and high-conversion Video Sales Letters (VSLs) for paid advertising campaigns."
+    answer: "I offer a comprehensive range of video post-production services including viral reels for Instagram and TikTok, YouTube long-form editing, real estate showcase videos, corporate event recaps, and high-conversion Video Sales Letters (VSLs) for paid advertising campaigns."
   },
   {
     question: "Do you provide video editing for real estate agents?",
-    answer: "Yes, real estate is one of our core niches. We create professional properties showcase videos that highlight key features and tell a story about the home, helping agents attract more serious buyers and build a premier local brand."
+    answer: "Yes, real estate is one of my core niches. I create professional properties showcase videos that highlight key features and tell a story about the home, helping agents attract more serious buyers and build a premier local brand."
   },
   {
     question: "How long does your video editing process take?",
-    answer: "Our standard turnaround time is 24 to 48 hours for short-form content and 3 to 5 business days for long-form YouTube videos. We prioritize both speed and quality to ensure your content calendar remains consistent and impactful."
+    answer: "My standard turnaround time is 24 to 48 hours for short-form content and 3 to 5 business days for long-form YouTube videos. I prioritize both speed and quality to ensure your content calendar remains consistent and impactful."
   },
   {
     question: "Can your edits help me go viral?",
-    answer: "While virality depends on various factors, our editing style is specifically engineered for high retention. We use strategic pacing, engaging captions, and scroll-stopping hooks that are proven to increase viewer watch time and boost discoverability across social platforms."
+    answer: "While virality depends on various factors, my editing style is specifically engineered for high retention. I use strategic pacing, engaging captions, and scroll-stopping hooks that are proven to increase viewer watch time and boost discoverability across social platforms."
   }
 ]
 

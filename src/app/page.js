@@ -78,7 +78,7 @@ const schemaData = [
         "name": "What is Ahmed Digital?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ahmed Digital is a premium video editing agency specializing in high-impact, scroll-stopping content. Our team provides 'Done-For-You' organic content systems designed to help businesses and creators grow their influence."
+          "text": "Ahmed Digital is a premium video editing service specializing in high-impact, scroll-stopping content. I provide 'Done-For-You' organic content systems designed to help businesses and creators grow their influence."
         }
       },
       {
@@ -86,7 +86,7 @@ const schemaData = [
         "name": "What video editing services do you offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We offer viral reels for Instagram and TikTok, YouTube long-form editing, real estate showcase videos, corporate event recaps, and high-conversion Video Sales Letters (VSLs)."
+          "text": "I offer viral reels for Instagram and TikTok, YouTube long-form editing, real estate showcase videos, corporate event recaps, and high-conversion Video Sales Letters (VSLs)."
         }
       },
        {
@@ -94,7 +94,7 @@ const schemaData = [
         "name": "Do you provide video editing for real estate agents?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, real estate is one of our core niches. We create professional properties showcase videos that highlight key features and help agents build a premier local brand."
+          "text": "Yes, real estate is one of my core niches. I create professional properties showcase videos that highlight key features and help agents build a premier local brand."
         }
       }
     ]

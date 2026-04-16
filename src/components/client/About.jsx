@@ -51,7 +51,7 @@ const About = () => {
                         className="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-black px-6 py-3 rounded-full transition-all hover:scale-105"
                         style={{ background: '#cfeb6c' }}
                     >
-                        Checkout What We Do →
+                        Checkout What I Do →
                     </a>
                 </div>
 

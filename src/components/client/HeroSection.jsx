@@ -74,7 +74,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-[#a0a0a0] max-w-2xl text-base sm:text-lg font-light mb-8">
-          We help entrepreneurs and businesses with Done-For-You organic content systems that generate leads on autopilot.
+          I help entrepreneurs and businesses with Done-For-You organic content systems that generate leads on autopilot.
         </p>
 
         {/* Avatars */}
@@ -87,7 +87,7 @@ export default function HeroSection() {
           </div>
           <div className="text-left text-sm max-w-[200px] sm:max-w-none text-center sm:text-left">
             <p className="font-semibold text-white/90">Loved by 500+ Businesses worldwide.</p>
-            <p className="text-[#888]">Our Clients Speak for Us</p>
+            <p className="text-[#888]">My Clients Speak for Me</p>
           </div>
         </div>
 
@@ -113,7 +113,7 @@ export default function HeroSection() {
           <div className="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none z-10"></div>
           {/* Main Hero Video */}
           <video
-            src="https://res.cloudinary.com/dyoeyaaej/video/upload/v1757355188/Best_Video_Editing_USA_CANADA_AUSTRALIA_d2fekv.mp4"
+            src="https://res.cloudinary.com/dyoeyaaej/video/upload/q_auto/f_auto/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4"
             autoPlay muted loop playsInline preload="auto"
             className="w-full h-full object-cover rounded-2xl"
           />

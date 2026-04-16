@@ -3,22 +3,24 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useCallback } from 'react';
 import YoutubeVideos from './VideosComponent/YoutubeVideos';
 import AdsVideos from './VideosComponent/AdsVideos';
-import ShortVideos from './VideosComponent/ShortsVideos';
+
 import SocialMediaVideos from './VideosComponent/SocialMediaVideos';
 import EventsVideos from './VideosComponent/EventVideos';
 import OtherVideos from './VideosComponent/OtherVideos';
 import BusinessPromoVideos from './VideosComponent/BusinessPromoVideos';
+import ShortFormVideos from './VideosComponent/ShortFormVideos';
 
 const categories = [
-    "ads & vsl", "business promo", "youtube", "shorts", "social media", "events", "other",
+    "ads & vsl", "business promo", "short forms", "youtube", "social media", "events", "other",
 ];
 
 // JSX elements defined once at module level — never re-created
 const PANELS = {
     'ads & vsl':       <AdsVideos />,
     'business promo':  <BusinessPromoVideos />,
+    'short forms':     <ShortFormVideos />,
     'youtube':         <YoutubeVideos />,
-    'shorts':          <ShortVideos />,
+
     'social media':    <SocialMediaVideos />,
     'events':          <EventsVideos />,
     'other':           <OtherVideos />,

@@ -21,7 +21,7 @@ export const metadata = {
   keywords: 'video editing agency, reels editing, real estate video editor, YouTube video editor, marketing videos, USA video editor, video production',
   openGraph: {
     title: 'Ahmed Digital | Video Editing Agency for Reels & Ads',
-    description: 'We create scroll-stopping stories that convert. Professional video editing for businesses and creators.',
+    description: 'I create scroll-stopping stories that convert. Professional video editing for businesses and creators.',
     url: 'https://ahmeddigital.com',
     siteName: 'Ahmed Digital',
     images: [
