@@ -4,28 +4,26 @@ import useVideoAutoPause from "@/hooks/useVideoAutoPause";
 import NativePlyr from "../NativePlyr";
 import VideoWrapper from "./VideoWrapper";
 
-const AdsVideos = () => {
+const BusinessPromoVideos = () => {
     const videos = [
         {
-            src: "https://res.cloudinary.com/dyoeyaaej/video/upload/q_auto/f_auto/v1776327730/Video_1_Roam_lgej2n.mp4",
+            src: "https://res.cloudinary.com/dyoeyaaej/video/upload/q_auto/f_auto/v1776329530/Video_1_Manuele_Dental_nb7lnm.mp4",
         },
         {
-            src: "https://res.cloudinary.com/dyoeyaaej/video/upload/q_auto/f_auto/v1776327727/Video_3_Brandon_mi6dld.mp4",
+            src: "https://res.cloudinary.com/dyoeyaaej/video/upload/q_auto/f_auto/v1776329520/Video_2_Lederman_gxag8u.mp4",
         },
         {
-            src: "https://res.cloudinary.com/dyoeyaaej/video/upload/q_auto/f_auto/v1776327708/Video_2_Replit_gnkhi5.mp4",
+            src: "https://res.cloudinary.com/dyoeyaaej/video/upload/q_auto/f_auto/v1776329534/Video_3_Flow_mpx3sh.mp4",
         },
         {
-            src: "https://res.cloudinary.com/dyoeyaaej/video/upload/q_auto/f_auto/v1776327711/Video_4_Vocation_nyl754.mp4",
+            src: "https://res.cloudinary.com/dyoeyaaej/video/upload/q_auto/f_auto/v1776329520/Video_4_Hennessy_debfjx.mp4",
         }
     ];
-
 
     const videoRefs = useRef([]);
 
     useVideoAutoPause(videoRefs);
 
-    // ✅ Play only one video at a time
     const handlePlay = (currentIndex) => {
         videoRefs.current.forEach((video, index) => {
             if (index !== currentIndex && video && !video.paused) {
@@ -42,11 +40,10 @@ const AdsVideos = () => {
                         <VideoWrapper>
                             <NativePlyr
                                 src={video.src}
-                                thumbnail={video.thumbnail}
                                 onPlay={() => handlePlay(index)}
                                 forwardRef={(el) => (videoRefs.current[index] = el)}
-                                ariaLabel="YouTube video editing showcase by Ahmed Digital"
-                                title="Professional YouTube video editing by Ahmed Digital"
+                                ariaLabel="Business promo video showcase by Ahmed Digital"
+                                title="Professional business promo video by Ahmed Digital"
                             />
                         </VideoWrapper>
                     </div>
@@ -56,4 +53,4 @@ const AdsVideos = () => {
     );
 };
 
-export default AdsVideos;
+export default BusinessPromoVideos;

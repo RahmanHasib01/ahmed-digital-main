@@ -84,21 +84,8 @@ const Footer = () => {
                 >
                     AHMED DIGITAL
                 </div>
-            </div>
-
-            {/* Sub-footer */}
-            <div
-                className="flex flex-col sm:flex-row justify-between items-center gap-2 px-6 sm:px-10 lg:px-16 py-4"
-                style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}
-            >
-                <p className="text-white/30 text-xs font-poppins text-center sm:text-left">
+                <p className="text-white/20 text-xs font-poppins text-center pb-4">
                     © 2025 ahmeddigital · all rights reserved
-                </p>
-                <p className="text-white/30 text-xs font-poppins text-center sm:text-right">
-                    Developed by{' '}
-                    <a href="https://www.linkedin.com/in/ahnaf-taiyeb-6b6298296/" target="_blank" rel="noopener noreferrer" className="text-[#7e56dc] hover:text-[#cfeb6c] transition-colors">
-                        Ahnaf Taiyeb
-                    </a>
                 </p>
             </div>
         </footer>

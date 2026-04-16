@@ -7,19 +7,21 @@ import ShortVideos from './VideosComponent/ShortsVideos';
 import SocialMediaVideos from './VideosComponent/SocialMediaVideos';
 import EventsVideos from './VideosComponent/EventVideos';
 import OtherVideos from './VideosComponent/OtherVideos';
+import BusinessPromoVideos from './VideosComponent/BusinessPromoVideos';
 
 const categories = [
-    "ads & vsl", "youtube", "shorts", "social media", "events", "other",
+    "ads & vsl", "business promo", "youtube", "shorts", "social media", "events", "other",
 ];
 
 // JSX elements defined once at module level — never re-created
 const PANELS = {
-    'ads & vsl':    <AdsVideos />,
-    'youtube':      <YoutubeVideos />,
-    'shorts':       <ShortVideos />,
-    'social media': <SocialMediaVideos />,
-    'events':       <EventsVideos />,
-    'other':        <OtherVideos />,
+    'ads & vsl':       <AdsVideos />,
+    'business promo':  <BusinessPromoVideos />,
+    'youtube':         <YoutubeVideos />,
+    'shorts':          <ShortVideos />,
+    'social media':    <SocialMediaVideos />,
+    'events':          <EventsVideos />,
+    'other':           <OtherVideos />,
 };
 
 const WorkShowcase = () => {
