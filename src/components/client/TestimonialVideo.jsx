@@ -6,46 +6,64 @@ import 'swiper/css';
 
 const testimonials = [
   {
-    company: 'Viola Properties',
-    quote: 'Ahmed Digital transformed our property listings — the videos are cinematic, professional, and genuinely drive inquiries. An absolute game-changer for our marketing.',
-    name: 'Sarah Thompson',
-    role: 'Head of Marketing',
-    avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=Sarah',
+    name: "Liam O'Connor",
+    role: 'Australia',
+    quote: "Communication was seamless and the turnaround was lightning fast. The final video felt exactly like our brand's voice.",
+    avatar: "/client-images/liam o'connor.jfif",
   },
   {
-    company: 'HUWA Brand',
-    quote: 'Working with Ahmed Digital feels effortless. They captured our brand story with precision and style. Our social engagement tripled since we started collaborating.',
-    name: 'Marcus Lee',
-    role: 'Creative Director',
-    avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=Marcus',
+    name: 'Sarah Jenkins',
+    role: 'USA',
+    quote: "The motion graphics added a level of professionalism we didn't even know we were missing. Highly recommended for any project.",
+    avatar: '/client-images/sarah.jfif',
   },
   {
-    company: 'VEG Kitchen',
-    quote: 'Ahmed Digital is the most reliable editing partner you could ask for. Fast, creative, and they always nail the vibe. Our reels have never looked better.',
-    name: 'Priya Nair',
-    role: 'Brand Manager',
-    avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=Priya',
+    name: 'Lukas Schmidt',
+    role: 'Germany',
+    quote: 'Working with him was a breeze. He took our rough ideas and transformed them into a high-converting social media ad.',
+    avatar: '/client-images/lukas.jfif',
   },
   {
-    company: 'FitLife Studio',
-    quote: 'The fitness content they edit for us is electric. Every reel feels scroll-stopping and authentic — exactly what we needed to grow our online community.',
-    name: 'Jake Morrison',
-    role: 'CEO & Founder',
-    avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=Jake',
+    name: 'Chlo\u00e9 Dubois',
+    role: 'France',
+    quote: 'Reliable, creative, and technically skilled. He handled our massive batch of files without breaking a sweat or missing a deadline.',
+    avatar: '/client-images/chole.jfif',
   },
   {
-    company: 'Rogo Academy',
-    quote: 'Our course promo videos went from boring slideshow to genuinely compelling content. Students actually share the videos — that says everything.',
-    name: 'Amina Khalil',
-    role: 'Director of Growth',
-    avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=Amina',
+    name: 'Ethan Walker',
+    role: 'Australia',
+    quote: 'The storytelling in the long-form edit was masterfully done. He kept the audience engaged from the first second to the last.',
+    avatar: '/client-images/ethan.jfif',
   },
   {
-    company: 'NextStep Realty',
-    quote: 'Every deadline. Every time. Ahmed Digital never misses. Our real estate walkthrough content has become our #1 lead generation channel.',
-    name: 'David Chen',
-    role: 'Sales Director',
-    avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=David',
+    name: 'Maya Rodriguez',
+    role: 'USA',
+    quote: "I've worked with many editors, but his eye for pacing and rhythm is rare. A true partner in our creative process.",
+    avatar: '/client-images/maya.jfif',
+  },
+  {
+    name: 'Leon Fischer',
+    role: 'Germany',
+    quote: 'Expertly handled our corporate project with a clean, sophisticated style. The feedback from our executive team was overwhelmingly positive.',
+    avatar: '/client-images/leon.jfif',
+  },
+  {
+    name: 'Am\u00e9lie Laurent',
+    role: 'France',
+    quote: 'He is a powerhouse when it comes to post-production. The color grading and audio mix were absolutely flawless on this one.',
+    avatar: '/client-images/amile.jfif',
+  },
+  {
+    name: 'Jack Harrison',
+    role: 'Australia',
+    quote: 'Exceptional work on our short-form content. He understands how to stop the scroll and keep viewers watching until the end.',
+    avatar: '/client-images/jack.jfif',
+  },
+  {
+    name: 'David Miller',
+    role: 'USA',
+    quote: "Proactive and insightful. He didn't just follow the script; he made creative suggestions that significantly improved the final product.",
+    avatar: '/client-images/david.jfif',
   },
 ];
 
@@ -102,14 +120,6 @@ export default function TestimonialVideo() {
                     border: '1px solid rgba(0,0,0,0.06)',
                   }}
                 >
-                  {/* Company name */}
-                  <p
-                    className="font-poppins font-semibold text-sm tracking-wider uppercase mb-6"
-                    style={{ color: '#7e56dc' }}
-                  >
-                    {t.company}
-                  </p>
-
                   {/* Quote */}
                   <p
                     className="font-poppins text-lg md:text-xl leading-relaxed flex-1 mb-8"

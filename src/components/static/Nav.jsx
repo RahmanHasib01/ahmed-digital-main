@@ -1,8 +1,12 @@
 'use client'
 import React, { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import { useScrollToSection } from '@/hooks/useScrollTo';
 
 function NavBar() {
+    const pathname = usePathname();
+    if (pathname && pathname.startsWith('/dashboard')) return null;
+
     const navRef = useRef(null);
 
     useEffect(() => {
@@ -96,7 +100,10 @@ function NavBar() {
             }}
         >
             {/* Logo */}
-            <span className="text-white font-poppins font-semibold text-sm sm:text-base tracking-wide select-none whitespace-nowrap shrink-0">
+            <span 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-white font-poppins font-semibold text-sm sm:text-base tracking-wide select-none whitespace-nowrap shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
+            >
                 ahmed<span className="hidden sm:inline">digital</span><span style={{ color: '#cfeb6c' }}>.</span>
             </span>
 
@@ -125,10 +132,11 @@ function NavBar() {
                 href="https://cal.com/ahmeddigital/15min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black font-semibold text-[11px] sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:scale-105 whitespace-nowrap shrink-0 ml-3 sm:ml-4"
-                style={{ background: '#cfeb6c', transition: 'transform 0.2s ease', display: 'inline-block' }}
+                className="group text-black font-semibold text-[11px] sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full whitespace-nowrap shrink-0 ml-3 sm:ml-4 transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(207,235,108,0.4)] hover:-translate-y-0.5 active:scale-95 active:translate-y-0"
+                style={{ background: '#cfeb6c', display: 'flex', alignItems: 'center', gap: '4px' }}
             >
-                Let's Talk →
+                Let's Talk 
+                <span className="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1">→</span>
             </a>
         </nav>
     );

@@ -37,29 +37,24 @@ export default function VideoWrapper({ children }) {
         return () => document.removeEventListener('fullscreenchange', onChange);
     }, []);
 
-    const btnClass =
-        'px-[1.5dvw] py-[0.3dvw] text-[1dvw] bg-gray25 text-white rounded hover:bg-tertiary transition flex gap-2 items-center';
-
     return (
         <div ref={wrapperRef} className="relative rounded-lg overflow-hidden">
             {children}
 
-            {/* Controls (desktop only) */}
-            <div className="hidden lg:block">
-                <div className="mt-2 text-center flex justify-center gap-2">
-                    <button onClick={toggleMute} className={btnClass}>
-                        {isMuted ? <VolumeX size={16} strokeWidth={1.5} /> : <Volume2 size={16} strokeWidth={1.5} />}
-                    </button>
-                    {!isFs ? (
-                        <button onClick={enterFullscreen} className={btnClass}>
-                            <Fullscreen size={16} strokeWidth={1.5} />
-                        </button>
-                    ) : (
-                        <button onClick={exitFullscreen} className={btnClass}>
-                            <Minimize size={16} strokeWidth={1.5} />
-                        </button>
-                    )}
-                </div>
+            {/* Controls */}
+            <div className="mt-1 flex justify-center gap-1">
+                <button
+                    onClick={toggleMute}
+                    className="p-1.5 lg:px-[1.5dvw] lg:py-[0.3dvw] bg-gray25 text-white rounded hover:bg-tertiary transition flex items-center justify-center"
+                >
+                    {isMuted ? <VolumeX size={12} strokeWidth={1.5} /> : <Volume2 size={12} strokeWidth={1.5} />}
+                </button>
+                <button
+                    onClick={isFs ? exitFullscreen : enterFullscreen}
+                    className="p-1.5 lg:px-[1.5dvw] lg:py-[0.3dvw] bg-gray25 text-white rounded hover:bg-tertiary transition flex items-center justify-center"
+                >
+                    {isFs ? <Minimize size={12} strokeWidth={1.5} /> : <Fullscreen size={12} strokeWidth={1.5} />}
+                </button>
             </div>
         </div>
     );

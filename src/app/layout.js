@@ -5,6 +5,7 @@ import { Poppins } from "next/font/google";
 import CustomCursor from "@/components/client/CustomCursor";
 import Script from "next/script";
 import LoaderWrapper from "@/components/client/LoaderWrapper";
+import { Suspense } from 'react';
 
 
 const poppins = Poppins({
@@ -65,7 +66,9 @@ export default function RootLayout({ children }) {
         <div className="custom-cursor">
           <LoaderWrapper>
             <CustomCursor />
-            <NavBar />
+            <Suspense fallback={null}>
+              <NavBar />
+            </Suspense>
             <SmoothScrollWrapper>
               {children}
             </SmoothScrollWrapper>

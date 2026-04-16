@@ -1,12 +1,18 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 const CustomCursor = () => {
     const cursorRef = useRef(null);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
+        // Hide on touch devices
+        const touch = window.matchMedia('(hover: none)').matches;
+        setIsMobile(touch);
+        if (touch) return;
+
         const cursor = cursorRef.current;
 
         // 💫 Cursor movement
@@ -80,6 +86,8 @@ const CustomCursor = () => {
             });
         };
     }, []);
+
+    if (isMobile) return null;
 
     return (
         <div

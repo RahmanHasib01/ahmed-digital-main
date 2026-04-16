@@ -9,10 +9,16 @@ export default function LoaderWrapper({ children }) {
     const barRef = useRef(null);
 
     useEffect(() => {
+        if (sessionStorage.getItem('ahmed_loaded')) {
+            setLoading(false);
+            return;
+        }
+
         if (loading) {
             const tl = gsap.timeline({
                 defaults: { ease: "power3.out" },
                 onComplete: () => {
+                    sessionStorage.setItem('ahmed_loaded', '1');
                     setTimeout(() => setLoading(false), 100);
                 },
             });

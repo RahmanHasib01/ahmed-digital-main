@@ -1,43 +1,32 @@
 "use client";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState, useCallback } from 'react';
-import YoutubeVideos from './VideosComponent/YoutubeVideos';
-import AdsVideos from './VideosComponent/AdsVideos';
-
-import SocialMediaVideos from './VideosComponent/SocialMediaVideos';
-import EventsVideos from './VideosComponent/EventVideos';
-import OtherVideos from './VideosComponent/OtherVideos';
-import BusinessPromoVideos from './VideosComponent/BusinessPromoVideos';
-import ShortFormVideos from './VideosComponent/ShortFormVideos';
-
-const categories = [
-    "ads & vsl", "business promo", "short forms", "youtube", "social media", "events", "other",
-];
-
-// JSX elements defined once at module level — never re-created
-const PANELS = {
-    'ads & vsl':       <AdsVideos />,
-    'business promo':  <BusinessPromoVideos />,
-    'short forms':     <ShortFormVideos />,
-    'youtube':         <YoutubeVideos />,
-
-    'social media':    <SocialMediaVideos />,
-    'events':          <EventsVideos />,
-    'other':           <OtherVideos />,
-};
+import { useState, useCallback, useEffect } from 'react';
+import Link from 'next/link';
+import VideoPanel from './VideosComponent/VideoPanel';
 
 const WorkShowcase = () => {
-    const [selectedCategory, setSelectedCategory] = useState('ads & vsl');
+    const [videoData, setVideoData] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [mountedTabs, setMountedTabs] = useState(() => new Set());
 
-    // Track which tabs have ever been visited — once visited, they stay mounted forever
-    const [mountedTabs, setMountedTabs] = useState(() => new Set(['ads & vsl']));
+    useEffect(() => {
+        fetch('/api/videos')
+            .then((r) => r.json())
+            .then((data) => {
+                setVideoData(data);
+                const firstTab = Object.keys(data)[0];
+                setSelectedCategory(firstTab);
+                setMountedTabs(new Set([firstTab]));
+            });
+    }, []);
 
+    const categories = videoData ? Object.keys(videoData) : [];
     const selectedIndex = categories.indexOf(selectedCategory);
 
     const handleSelect = useCallback((cat) => {
         setSelectedCategory(cat);
         setMountedTabs(prev => {
-            if (prev.has(cat)) return prev; // already mounted — return same ref, no re-render
+            if (prev.has(cat)) return prev;
             const next = new Set(prev);
             next.add(cat);
             return next;
@@ -46,6 +35,8 @@ const WorkShowcase = () => {
 
     const goNext = () => handleSelect(categories[(selectedIndex + 1) % categories.length]);
     const goPrev = () => handleSelect(categories[(selectedIndex - 1 + categories.length) % categories.length]);
+
+    if (!videoData) return null;
 
     return (
         <section id="work-section" className="min-h-screen bg-black w-full relative overflow-hidden pt-8 pb-20">
@@ -96,18 +87,31 @@ const WorkShowcase = () => {
                 <ChevronRight size={18} />
             </button>
 
-            {/*
-              Lazy-mount + keep-alive panels.
-              - First visit: mounts the panel (Plyr initializes once).
-              - Subsequent visits: CSS display toggle only — zero re-initialization, instant switch.
-            */}
             {categories.map(cat => (
                 <div
                     key={cat}
                     style={{ display: selectedCategory === cat ? 'block' : 'none' }}
                     aria-hidden={selectedCategory !== cat}
                 >
-                    {mountedTabs.has(cat) && PANELS[cat]}
+                    {mountedTabs.has(cat) && (
+                        <>
+                            <VideoPanel
+                                videos={videoData[cat].videos.slice(0, 4)}
+                                layout={videoData[cat].layout}
+                                category={cat}
+                            />
+                            {videoData[cat].videos.length > 4 && (
+                                <div className="flex justify-center mt-12 mb-4">
+                                    <Link 
+                                        href={`/videos/${encodeURIComponent(cat)}`}
+                                        className="text-white hover:text-black hover:bg-[#cfeb6c] border border-[rgba(255,255,255,0.12)] px-8 py-3 rounded-full font-poppins text-sm tracking-wide transition-all duration-300 hover:scale-105"
+                                    >
+                                        View All {cat} Videos →
+                                    </Link>
+                                </div>
+                            )}
+                        </>
+                    )}
                 </div>
             ))}
         </section>

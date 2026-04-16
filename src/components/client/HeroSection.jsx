@@ -80,10 +80,11 @@ export default function HeroSection() {
         {/* Avatars */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-10">
           <div className="flex -space-x-3">
-            <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Sarah" alt="Ahmed Digital Happy Client Sarah" className="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#200f48] object-cover" />
-            <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Marcus" alt="Ahmed Digital Happy Client Marcus" className="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#200f48] object-cover" />
-            <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Priya" alt="Ahmed Digital Happy Client Priya" className="w-10 h-10 rounded-full border-[#050505] bg-[#200f48] object-cover" />
-            <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Jake" alt="Ahmed Digital Happy Client Jake" className="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#200f48] object-cover" />
+            <img src="/client-images/sarah.jfif" alt="Client Sarah Jenkins" className="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" />
+            <img src="/client-images/liam o'connor.jfif" alt="Client Liam O'Connor" className="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" />
+            <img src="/client-images/lukas.jfif" alt="Client Lukas Schmidt" className="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" />
+            <img src="/client-images/maya.jfif" alt="Client Maya Rodriguez" className="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" />
+            <img src="/client-images/ethan.jfif" alt="Client Ethan Walker" className="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" />
           </div>
           <div className="text-left text-sm max-w-[200px] sm:max-w-none text-center sm:text-left">
             <p className="font-semibold text-white/90">Loved by 500+ Businesses worldwide.</p>

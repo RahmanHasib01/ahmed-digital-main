@@ -41,7 +41,8 @@ export default function NativePlyr({ src, onPlay, forwardRef, thumbnail, ariaLab
 
             playerRef.current = new Plyr(internalRef.current, {
                 fullscreen: { enabled: true },
-                controls: ['play', 'progress', 'volume', 'fullscreen'],
+                controls: ['play', 'progress', 'fullscreen'],
+                clickToPlay: true,
             });
 
             // Wait until container exists
@@ -54,6 +55,7 @@ export default function NativePlyr({ src, onPlay, forwardRef, thumbnail, ariaLab
                 internalRef.current?.addEventListener('play', () => {
                     container?.classList.remove('plyr--hidden-controls');
                 });
+
             }
 
             return () => playerRef.current.destroy();
@@ -90,7 +92,7 @@ export default function NativePlyr({ src, onPlay, forwardRef, thumbnail, ariaLab
                     onClick={() => {
                         internalRef.current?.play();
                     }}
-                    className="absolute inset-0 m-auto lg:w-[4dvw] w-[14dvw] lg:h-[3dvw] h-[4.25dvh] bg-[#4335de] rounded-full flex items-center justify-center z-10 text-black text-[6dvw] lg:text-[1.5dvw]"
+                    className="absolute inset-0 m-auto w-10 h-10 lg:w-[4dvw] lg:h-[3dvw] bg-[#4335de] rounded-full flex items-center justify-center z-10 text-black text-base lg:text-[1.5dvw]"
                 >
                     ▶
                 </button>
