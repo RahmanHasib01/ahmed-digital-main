@@ -65,10 +65,24 @@ export default function NativePlyr({ src, onPlay, forwardRef, thumbnail, ariaLab
     }, [shouldLoad, forwardRef]);
 
     return (
-        <div className="relative w-full h-auto">
+        <div 
+            className="relative w-full h-auto cursor-pointer"
+            onClick={(e) => {
+                // Ignore clicks on control overlay
+                if (e.target.closest('.plyr__controls') || e.target.closest('button')) return;
+                if (!internalRef.current) return;
+                
+                if (internalRef.current.paused) {
+                    internalRef.current.play();
+                } else {
+                    internalRef.current.pause();
+                }
+            }}
+        >
             <video
                 ref={internalRef}
                 className="w-full h-auto rounded-lg"
+                style={{ objectFit: 'contain', maxHeight: '100%', maxWidth: '100%' }}
                 playsInline
                 onPlay={(e) => {
                     document.querySelectorAll('video').forEach((vid) => {
