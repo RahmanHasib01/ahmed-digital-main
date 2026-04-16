@@ -100,16 +100,14 @@ const WorkShowcase = () => {
                                 layout={videoData[cat].layout}
                                 category={cat}
                             />
-                            {videoData[cat].videos.length > 4 && (
-                                <div className="flex justify-center mt-12 mb-4">
-                                    <Link 
-                                        href={`/videos/${encodeURIComponent(cat)}`}
-                                        className="text-white hover:text-black hover:bg-[#cfeb6c] border border-[rgba(255,255,255,0.12)] px-8 py-3 rounded-full font-poppins text-sm tracking-wide transition-all duration-300 hover:scale-105"
-                                    >
-                                        View All {cat} Videos →
-                                    </Link>
-                                </div>
-                            )}
+                            <div className="flex justify-center mt-12 mb-4">
+                                <Link 
+                                    href={`/videos/${encodeURIComponent(cat)}`}
+                                    className="text-white hover:text-black hover:bg-[#cfeb6c] border border-[rgba(255,255,255,0.12)] px-8 py-3 rounded-full font-poppins text-sm tracking-wide transition-all duration-300 hover:scale-105"
+                                >
+                                    View All {cat} Videos →
+                                </Link>
+                            </div>
                         </>
                     )}
                 </div>
