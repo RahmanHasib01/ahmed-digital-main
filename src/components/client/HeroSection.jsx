@@ -116,7 +116,8 @@ export default function HeroSection() {
           <video
             src="https://res.cloudinary.com/dyoeyaaej/video/upload/q_auto/f_auto/v1755002153/AD%20Videos/best-video-editing-service_bxclwk.mp4"
             autoPlay muted loop playsInline preload="auto"
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-full object-cover rounded-2xl cursor-pointer"
+            onClick={(e) => e.target.paused ? e.target.play() : e.target.pause()}
           />
         </div>
       </div>

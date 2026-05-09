@@ -70,6 +70,10 @@ export default function NativePlyr({ src, onPlay, forwardRef, thumbnail, ariaLab
             onClick={(e) => {
                 // Ignore clicks on control overlay
                 if (e.target.closest('.plyr__controls') || e.target.closest('button')) return;
+                
+                // Let Plyr handle clickToPlay if it's already initialized
+                if (playerRef.current) return;
+                
                 if (!internalRef.current) return;
                 
                 if (internalRef.current.paused) {
